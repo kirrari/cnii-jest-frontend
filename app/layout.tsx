@@ -1,10 +1,10 @@
-import Footer from "./_components/footer";
-import Header from "./_components/header";
-import LeftSidebar from "./_components/left-sidebar";
-import RightSidebar from "./_components/right-sidebar";
+import Footer from "./(main)/_components/footer";
+import Header from "./(main)/_components/header";
+import LeftSidebar from "./(main)/_components/left-sidebar";
+import RightSidebar from "./(main)/_components/right-sidebar";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const font = Roboto({
