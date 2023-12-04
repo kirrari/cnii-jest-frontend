@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import RightSidebar from "../_components/right-sidebar";
 import LeftSidebar from "../_components/left-sidebar";
 
 const positiveContext = [
@@ -19,24 +18,34 @@ const negativeContext = [
   "Под потолком подвала был устроен абажур, через который было видно небо и часть крыши соседнего флигеля; других окон не было.",
 ];
 
-const TOP_OFFSET = 100;
-
 export default function Home() {
   return (
     <div className="flex gap-8">
       <LeftSidebar />
       <div className="flex w-full flex-1 flex-col [&>*:last-child]:border-none [&>*:nth-child(n)]:border-b [&>*:nth-child(n)]:py-8">
-        <div id="gesture" className="flex flex-col">
-          <h2 className="text-[24px] font-bold text-neutral-100">Абажур</h2>
-          <div className="flex items-center gap-2 text-[16px] text-muted-foreground">
-            <span>Искаженный жест</span>
-            <span>/</span>
-            <span>Современный</span>
-            <span>/</span>
-            <span>Международный</span>
+        <div id="gesture" className="flex">
+          <div className="flex min-w-[150px] flex-col pr-4">
+            <h2 className="pb-3 text-[30px] font-bold text-neutral-100">
+              Абажур
+            </h2>
+            <span className="text-sm text-muted-foreground">Вид речи:</span>
+            <span className="pb-2 text-sm">Искаженный жест</span>
+            <span className="text-sm text-muted-foreground">Актуальность:</span>
+            <span className="pb-2 text-sm">Современный</span>
+            <span className="text-sm text-muted-foreground">Диалект:</span>
+            <span className="pb-2 text-sm">Международный</span>
           </div>
-          <video className="mt-6" src="/jest.webm" controls />
-          <img className="object-contain" src="/jest.jpg" alt="Жест" />
+          <div className="flex gap-2">
+            <video
+              className="w-1/2"
+              src="/jest.webm"
+              controls
+              muted
+              autoPlay
+              loop
+            />
+            <img className="w-1/2 object-contain" src="/jest.jpg" alt="Жест" />
+          </div>
         </div>
         <div id="words" className="flex flex-col gap-4">
           <h2 className="text-[24px] font-bold text-neutral-100">Слова</h2>
@@ -127,7 +136,6 @@ export default function Home() {
           </ol>
         </div>
       </div>
-      <RightSidebar isScrolled={true} />
     </div>
   );
 }

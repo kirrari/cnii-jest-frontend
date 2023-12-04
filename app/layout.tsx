@@ -33,9 +33,7 @@ export default function RootLayout({
           storageKey="cnii-jest-theme"
         >
           <Header />
-          <main className="mx-auto flex max-w-[1200px] flex-row px-8 pb-12">
-            {children}
-          </main>
+          <main className="mx-auto flex flex-row px-8 pb-12">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

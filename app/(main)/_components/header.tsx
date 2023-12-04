@@ -58,7 +58,7 @@ const Header = () => {
         </div>
       </nav>
       <div className="border-b" />
-      <nav className="mx-auto flex max-w-[1200px] justify-center px-8 py-3">
+      <nav className="sticky-72 mx-auto flex max-w-[1200px] justify-center px-8 py-3">
         <div className="flex w-full justify-between">
           <div className="flex gap-3">
             {basicLinks.map((link) => (
