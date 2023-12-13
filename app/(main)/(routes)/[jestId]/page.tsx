@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import LeftSidebar from "../_components/left-sidebar";
+import { useParams } from "next/navigation";
+import LeftSidebar from "../../_components/left-sidebar";
+import useJest from "@/actions/useJest";
 
 const positiveContext = [
   "Шёлковый абажур",
@@ -19,10 +21,14 @@ const negativeContext = [
 ];
 
 export default function Home() {
+  const params = useParams();
+  const jestId = params.jestId as string;
+  const { data: jest = {} } = useJest(jestId);
+
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-6">
       <LeftSidebar />
-      <div className="flex w-full flex-1 flex-col [&>*:last-child]:border-none [&>*:nth-child(n)]:border-b [&>*:nth-child(n)]:py-8">
+      <div className="flex w-full flex-1 flex-col px-2 [&>*:last-child]:border-none [&>*:nth-child(n)]:border-b [&>*:nth-child(n)]:py-8">
         <div id="gesture" className="flex">
           <div className="flex min-w-[150px] flex-col pr-4">
             <h2 className="pb-3 text-[30px] font-bold text-neutral-100">
@@ -50,7 +56,8 @@ export default function Home() {
         <div id="words" className="flex flex-col gap-4">
           <h2 className="text-[24px] font-bold text-neutral-100">Слова</h2>
           <p className="text-[16px] font-thin leading-7 text-neutral-200">
-            ава, австралийский хилер, азавак, айну, акита-ину, алано, алько,
+            {jest.title}
+            {/* ава, австралийский хилер, азавак, айну, акита-ину, алано, алько,
             аляскинский маламут, апсо, арапчик, арлекин, арликон, арьежский
             брак, афган, аффен-пинчер, аще, бабиш, бавар аппенцельский, бавар
             энтлебухский, барбе, барбет, барбетка, Барбос, барбосина, басенджи,
@@ -58,7 +65,7 @@ export default function Home() {
             гриффон вендин, бассет фов де бретань, бассет-гриффон, бассет-хаунд,
             бедлингтон-терьер, бельгийская овчарка, бигль, бигль-харьер, бийи,
             билли, бишон-фриз, бладхаунд, блошарик, блэк энд тэн кунхаунд,
-            Бобик, бобтейл, боксёр, болонка, болоньез, бордер-колли
+            Бобик, бобтейл, боксёр, болонка, болоньез, бордер-колли */}
           </p>
         </div>
         <div id="naming-of-concepts" className="flex flex-col gap-4">
