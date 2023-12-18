@@ -3,7 +3,7 @@ import fetcher from "@/libs/fetcher";
 
 const useJest = (id?: string) => {
   const { data, error, isLoading } = useSWR(
-    id ? `https://jsonplaceholder.typicode.com/posts/${id}` : null,
+    id ? `https://nslovar.cnii-jest.ru/api/jests/${id}` : null,
     fetcher,
     {
       revalidateIfStale: false,

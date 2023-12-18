@@ -55,13 +55,13 @@ const LeftSidebar = () => {
           <Input placeholder="Введите название жеста..." />
           <ScrollArea className="h-72 text-muted-foreground">
             <div className="flex flex-col">
-              {posts.map((post: { id: number; title: string }) => (
+              {posts.map((post: { id: number; name: string }) => (
                 <Link
                   href={`/${post.id}`}
                   className="max-w-[190px] cursor-pointer truncate px-1 hover:text-neutral-200"
                   key={post.id}
                 >
-                  {post.title}
+                  {post.name}
                 </Link>
               ))}
             </div>
@@ -92,10 +92,10 @@ const LeftSidebar = () => {
           <Button variant="outline">Сброс фильтров</Button>
         </div>
         <div className="flex h-[690px] w-[50%] flex-col gap-2">
-          {entries.map((post: { id: number; title: string }) => (
+          {entries.map((post: { id: number; name: string }) => (
             <Link key={post.id} href={String(post.id)}>
               <div className="flex flex-col gap-1">
-                <p className="truncate text-muted-foreground">{post.title}</p>
+                <p className="truncate text-muted-foreground">{post.name}</p>
                 <img src="/jest.jpg" alt="Жест" />
               </div>
             </Link>

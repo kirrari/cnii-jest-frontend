@@ -3,7 +3,7 @@ import fetcher from "@/libs/fetcher";
 
 const usePosts = () => {
   const { data, error, isLoading } = useSWR(
-    "https://jsonplaceholder.typicode.com/posts",
+    "https://nslovar.cnii-jest.ru/api/jests",
     fetcher,
     {
       revalidateIfStale: false,
